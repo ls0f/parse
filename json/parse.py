@@ -127,14 +127,11 @@ class Parse(object):
         elif self.cur_char() == '[':
             v = self.parse_array()
         elif self.cur_char() == 't':
-            self.accept_multi("true")
-            v = 'true'
+            v = self.accept_multi("true")
         elif self.cur_char() == 'f':
-            self.accept_multi("false")
-            v = 'false'
+            v = self.accept_multi("false")
         elif self.cur_char() == 'n':
-            self.accept_multi("null")
-            v = 'null'
+            v = self.accept_multi("null")
         else:
             self.err()
         self.consume_blank()
